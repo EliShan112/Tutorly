@@ -9,7 +9,7 @@ import "./config/passport.js";
 import User from "./models/User.js";
 import tutorRoutes from "./routes/tutorRoutes.js"
 import studentRoutes from "./routes/tutorRoutes.js"
-
+import zoomRoutes from "./routes/zoomRoutes";
 
 // Validate environment variables
 const { CLIENT_URL, SESSION_SECRET } = process.env;
@@ -39,14 +39,15 @@ passport.deserializeUser(async (id, done)=>{
     done(null, user)
 })
 
-app.use(express.json())
-app.use(cookieParser())
+app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/tutor", tutorRoutes)
-app.use("/api/student", studentRoutes)
+app.use("/api/tutor", tutorRoutes);
+app.use("/api/student", studentRoutes);
+app.use("/api/zoom", zoomRoutes);
 
-app.use(errorMiddleware)
+app.use(errorMiddleware);
 
 
 export default app;
