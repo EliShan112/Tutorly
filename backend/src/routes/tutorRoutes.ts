@@ -1,7 +1,7 @@
 import express from "express"
-import { isAuthenticated, isTutor } from "../middleware/auth"
+import { isAuthenticated, isTutor } from "../middleware/auth.js"
 import { Request, Response } from "express";
-import Availability from "../models/Availability";
+import Availability from "../models/Availability.js";
 import { IUser } from "../models/User";
 
 

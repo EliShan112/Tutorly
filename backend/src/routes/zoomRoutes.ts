@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import axios from "axios";
 import { IUser } from "../models/User";
-import { ZoomToken } from "../models/ZoomToken";
+import { ZoomToken } from "../models/ZoomToken.js";
 
 const router = express.Router();
 

@@ -1,13 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
-import { isAuthenticated, isStudent } from "../middleware/auth";
+import { isAuthenticated, isStudent } from "../middleware/auth.js";
 import { Request, Response } from "express";
-import Availability from "../models/Availability";
-import Booking from "../models/Booking";
-import { IUser } from "../models/User";
+import Availability from "../models/Availability.js";
+import Booking from "../models/Booking.js";
+import { IUser } from "../models/User.js";
 import axios from "axios";
-import { ZoomToken } from "../models/ZoomToken";
-import { refreshZoomToken, createZoomMeeting } from "../utils/zoom";
+import { ZoomToken } from "../models/ZoomToken.js";
+import { refreshZoomToken, createZoomMeeting } from "../utils/zoom.js";
 
 
 

@@ -5,11 +5,12 @@ import authRoutes from "./routes/authRoutes.js";
 import errorMiddleware from "./middleware/errorMiddleware.js";
 import session from "express-session";
 import passport from "passport";
-import "./config/passport.js";
 import User from "./models/User.js";
 import tutorRoutes from "./routes/tutorRoutes.js"
-import studentRoutes from "./routes/tutorRoutes.js"
-import zoomRoutes from "./routes/zoomRoutes";
+import studentRoutes from "./routes/studentRoutes.js"
+import zoomRoutes from "./routes/zoomRoutes.js";
+import initializePassport from "./config/passport.js";
+
 
 // Validate environment variables
 const { CLIENT_URL, SESSION_SECRET } = process.env;
@@ -29,6 +30,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }))
+
+initializePassport();
 
 app.use(passport.initialize())
 app.use(passport.session())

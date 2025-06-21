@@ -1,6 +1,6 @@
 import axios from "axios";
-import { IUser } from "../models/User";
-import { ZoomToken } from "../models/ZoomToken"
+import { IUser } from "../models/User.js";
+import { ZoomToken } from "../models/ZoomToken.js"
 import moment from "moment-timezone";
 
 export const refreshZoomToken = async (tutorId: string)=>{
