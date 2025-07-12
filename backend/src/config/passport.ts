@@ -23,7 +23,7 @@ passport.use(
         const email = profile.emails?.[0]?.value || "";
         
         const newUser = await User.create({
-          googleId: profile.id,
+          googleId: profile.id, 
           name: profile.displayName,
           email,
           role: "student",

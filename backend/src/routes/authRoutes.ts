@@ -1,5 +1,5 @@
 import { Router, RequestHandler  } from "express";
-import { signup, login, logout } from "../controllers/authController.js";
+import { signup, login, logout, getCurrentUser } from "../controllers/authController.js";
 import passport from "passport";
 import jwt from "jsonwebtoken";
 
@@ -8,7 +8,8 @@ const router = Router();
 // Regular authentication routes
 router.post("/signup", signup as RequestHandler);
 router.post("/login", login as RequestHandler);
-router.get("logout", logout)
+router.get("/logout", logout as RequestHandler)
+router.get("/me", getCurrentUser as RequestHandler);
 
 // Google OAuth routes
 router.get("/google", passport.authenticate("google", {

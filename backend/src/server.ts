@@ -1,4 +1,4 @@
-import "./loadenv.js";
+import "./loadEnv.js";
 import dotenv from "dotenv";
 dotenv.config();
 import app from "./app.js";
